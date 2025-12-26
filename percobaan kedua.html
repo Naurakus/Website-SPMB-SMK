@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>SPMB SMK LPS CIAMIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a2540;
+            --secondary: #1e88e5;
+            --light: #f5f7fa;
+            --dark: #222;
+            .nav-logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.nav-logo img{
+    height:45px;
+}
+
+.nav-logo span{
+    color:#fff;
+    font-weight:600;
+    font-size:16px;
+}
+
+.nav-menu a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .nav-logo span{
+        font-size:14px;
+    }
+    .nav-logo img{
+        height:38px;
+    }
+}
+    
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(10,37,64,0.9);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav h1 {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+/* Overlay agar teks jelas */
+.hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(10,37,64,0.6);
+    z-index: 1;
+}
+
+/* Konten di atas video */
+.hero-content{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+        .hero-content h2 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            margin: 30px 0;
+            font-size: 42px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1565c0;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h3 {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        /* PROGRAM */
+        .program {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        
+        .logo-program{
+            width:80px;
+            height:80px;
+            object-fit:contain;
+            margin-bottom:15px;
+            
+}
+
+        .card{
+            background:#fff;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+        .card h4{
+            text-align:center;
+            margin-bottom:10px;
+}
+
+        .card p{
+            text-align:justify;
+}
+
+        .card img{
+            display:block;
+            margin:0 auto 15px;
+}
+
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card:hover .logo-program{
+            transform:scale(1.1);
+            transition:.3s;
+}
+
+
+        .card h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+        /* SEJARAH */
+        .sejarah{
+            padding:80px 0;
+            background:#fff;
+}
+
+        .sejarah-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:40px;
+            align-items:center;
+}
+
+        .sejarah-text h3{
+            font-size:32px;
+            color:var(--primary);
+            margin-bottom:20px;
+}
+
+        .sejarah-text p{
+            line-height:1.8;
+            text-align:justify;
+            margin-bottom:15px;
+}
+
+        .sejarah-image img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+        /* FASILITAS */
+        .fasilitas{
+            padding:80px 0;
+            background:#f4f6f9;
+}
+
+        .section-title{
+            text-align:center;
+            margin-bottom:50px;
+}
+
+        .section-title h3{
+            font-size:32px;
+            color:var(--primary);
+}
+
+        .section-title p{
+            color:#555;
+            margin-top:10px;
+}
+
+        .fasilitas-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+}
+
+        .fasilitas-card{
+            background:#fff;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 10px 30px rgba(0,0,0,.08);
+            transition:.3s;
+}
+
+        .fasilitas-card:hover{
+            transform:translateY(-8px);
+}
+
+        .fasilitas-card img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+}
+
+        .fasilitas-card h4{
+            padding:15px;
+            text-align:center;
+            font-weight:600;
+}
+
+       /* ALUR */
+        .ALUR{
+            padding:80px 0;
+            background:#fff;
+}
+
+        .ALUR-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:40px;
+            align-items:center;
+}
+
+        .ALUR-text h3{
+            font-size:32px;
+            color:var(--primary);
+            margin-bottom:20px;
+}
+
+ .ALUR-text h4{
+            font-size:30px;
+            color:var(--primary);
+            margin-bottom:20px;
+}
+
+        .ALUR-text p{
+            line-height:1.8;
+            text-align:justify;
+            margin-bottom:15px;
+}
+
+        .ALUR-image img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .sejarah-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+        /* FORM */
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #081d33;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media(max-width:768px){
+            .hero-content h2 {
+                font-size: 32px;
+            }
+        }
+        .footer{
+            background:var(--primary);
+            color:#fff;
+            text-align:center;
+            padding:30px 20px;
+}
+
+.social-media{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social-media a{
+    color:#fff;
+    font-size:20px;
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.4);
+    transition:.3s;
+}
+
+.social-media a:hover{
+    background:var(--secondary);
+    transform:translateY(-4px);
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-logo">
+        <img src="LOGO LPS.png" alt="Logo LPS">
+        <span>SPMB SMK LPS CIAMIS</span>
+    </div>
+    
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#program">Konsentrasi Keahlian</a></li>
+        <li><a href="#daftar">Daftar</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <video autoplay muted loop playsinline>
+        <source src="video spmb.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video>
+
+    <div class="hero-content">
+        <div>
+            <h2>SISTEM PENERIMAAN MURID BARU</h2>
+            <p>SMK LPS CIAMIS TAHUN AJARAN 2026/2027</P>
+            <a href="#daftar" class="btn">Daftar Sekarang</a>
+        </div>
+    </div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+    <div class="section-title">
+        <h3>KONSENTRASI KEAHLIAN</h3>
+    </div>
+
+    <div class="program">
+        <div class="card">
+            <img src="TP.png" alt="Logo Teknik Pemesinan" class="logo-program">
+            <H4>TEKNIK PEMESINAN</H4>
+            <p>Konsentrasi Keahlian Teknik Pemesinan di SMK adalah jurusan strategis untuk mencetak tenaga kerja siap pakai di industri manufaktur modern, dengan bekal keterampilan teknis, sikap profesional, dan peluang karir yang luas.</p>
+            <p>Membekali keterampilan, pengetahuan, dan sikap profesional agar lulusan kompeten bekerja di dunia usaha dan industri.
+               Mencetak tenaga kerja tingkat menengah yang mampu bekerja mandiri atau mengisi lowongan di bidang teknik pemesinan.
+               Mendorong lulusan memilih karir dan berkompetisi dengan sikap profesional di bidang manufaktur.</p>
+        </div>
+
+        <div class="card">
+            <img src="TKR.png" alt="Logo Teknik Kendaraan Ringan" class="logo-program">
+            <H4>TEKNIK KENDARAAN RINGAN</h4>
+            <p>Konsentrasi Keahlian Teknik Kendaraan Ringan bukan hanya soal memperbaiki mobil, tetapi juga membentuk siswa agar siap menghadapi perkembangan teknologi otomotif modern dan memiliki peluang kerja maupun usaha yang luas.</p>
+            <p>Konsentrasi Keahlian Teknik Kendaraan Ringan (TKR) adalah bidang di SMK yang fokus pada perawatan, perbaikan, dan pemahaman sistem kendaraan ringan (mobil). Tujuannya membekali siswa dengan keterampilan teknis otomotif, penggunaan peralatan bengkel, serta kesiapan kerja atau wirausaha di bidang otomotif.</p>
+        </div>
+
+        <div class="card">
+            <img src="TSM.png" alt="Logo Teknik Sepeda Motor" class="logo-program">
+            <H4>TEKNIK SEPEDA MOTOR</H4>
+            <p>Konsentrasi keahlian Teknik Sepeda Motor (TSM) di SMK adalah bagian dari program keahlian Teknik Otomotif yang berfokus pada keterampilan perawatan, perbaikan, dan pengembangan sepeda motor, serta membekali siswa dengan sikap profesional untuk bekerja maupun berwirausaha.</p>
+            <p>Kompetensi inti</p>
+                <p>1. Perawatan mesin sepeda motor.</p>
+                <p>2. Sistem kelistrikan dan elektronik sepeda motor.</p>
+                <p>3. Sistem rangka dan suspensi.</p>
+                <p>4. Diagnosa kerusakan dengan peralatan manual maupun digital.</p>
+                <p>5. Modifikasi dan inovasi teknologi sepeda motor.</p>
+        </div>
+
+        <div class="card">
+            <img src="TKJ.png" alt="Logo Teknik Komputer dan Jaringan" class="logo-program">
+            <h4>TEKNIK KOMPUTER DAN JARINGAN</h4>
+            <p>Konsentrasi keahlian Teknik Komputer dan Jaringan (TKJ) di SMK adalah jurusan yang mempelajari perakitan, perawatan, dan perbaikan komputer serta instalasi, konfigurasi, dan pengelolaan jaringan komputer. Lulusan diarahkan agar siap bekerja sebagai teknisi IT, administrator jaringan, maupun berwirausaha di bidang layanan komputer dan internet.</p>
+            <p>Fokus utama:</p>
+                <p>1. Perakitan dan perawatan komputer.</p>
+                <p>2. Instalasi sistem operasi dan software.</p>
+                <p>3. Troubleshooting hardware dan software.</p>
+                <p>4. Instalasi dan konfigurasi jaringan LAN, WAN, serta wireless.</p>
+                <p>5. Keamanan jaringan dan sistem.</p>
+                <p>6. Pembuatan website dasar dan layanan berbasis internet</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SEJARAH SEKOLAH -->
+<section class="sejarah">
+    <div class="container">
+        <div class="sejarah-grid">
+            <div class="sejarah-text">
+                <h3>SEJARAH SMK LPS CIAMIS</h3>
+                <p>
+                    SMK LPS CIAMIS didirikan pada tahun 1975 oleh para guru senior, 
+                    dan diberi nama STM YPS (Sekolah Teknik Menengah Yayasan Pendidikan Swadaya) 
+                    berlokasi di jalan RE. Martadinata No. 23 Kelurahan Maleber, Kecamatan Ciamis, 
+                    Kabupaten Ciamis sebagai dan pada tahun tahun 2000an STM YPS berubah Nomenklatur Menjadi 
+                    SMK LPS CIAMIS sampai sekarang, tujuan SMK LPS atau YPS masih sama kami berkomitmen dalam mencetak lulusan yang unggul, berkarakter, dan siap
+                    menghadapi dunia kerja. terus berkembang dengan mengedepankan kualitas pendidikan,
+                    fasilitas modern, serta tenaga pendidik profesional.
+                </p>
+                <p>
+                    Dengan dukungan masyarakat dan dunia industri,
+                    SMK LPS CIAMIS telah melahirkan lulusan yang
+                    kompeten dan berdaya saing tinggi di era digital.
+                </p>
+            </div>
+
+            <div class="sejarah-image">
+                <img src="gedung LPS.png" alt="Gedung Sekolah">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FASILITAS SEKOLAH -->
+<section class="fasilitas">
+    <div class="container">
+        <div class="section-title">
+            <h3>Fasilitas Sekolah</h3>
+            <p>Fasilitas Penunjang Pembelajaran dan Praktik Siswa</p>
+        </div>
+
+        <div class="fasilitas-grid">
+            <div class="fasilitas-card">
+                <img src="Ruang Praktik TP.jpeg" alt="Ruang Praktik Teknik Pemesinan">
+                <h4>Ruang Praktik Teknik Pemesinan</h4>
+            </div>
+
+            <div class="fasilitas-card">
+                <img src="Ruang Praktik TKR.jpeg" alt="RPS TKR">
+                <h4>Ruang Praktik Teknik Kendaraan Ringan</h4>
+            </div>
+
+            <div class="fasilitas-card">
+                <img src="Ruang Praktik TSM.jpeg" alt="RPS TSM">
+                <h4>Ruang Praktik Teknik Sepeda Motor</h4>
+            </div>
+
+            <div class="fasilitas-card">
+                <img src="Ruang Praktik TKJ.jpg" alt="RPS TKJ">
+                <h4>Ruang Praktik Teknik Komputer dan Jaringan</h4>
+            </div>
+
+            <div class="fasilitas-card">
+                <img src="Lapang.JPG" alt="Lapang olahraga">
+                <h4>Lapang Olahraga</h4>
+            </div>
+
+            <div class="fasilitas-card">
+                <img src="lab komputer.jpeg" alt="Labkom">
+                <h4>Ruang Laboratorium Komputer</h4>
+            </div>
+            
+            <div class="fasilitas-card">
+                <img src="Ruang teaching Factory TKR.jpg" alt="TEFA">
+                <h4>Gedung Teaching Factory (TEFA)</h4>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- ALUR PENDAFTARAN -->
+<section class="ALUR">
+    <div class="container">
+        <div class="ALUR-grid">
+            <div class="ALUR-text">
+                <h3>ALUR PENDAFTARAN</h3>
+                   <H4>PERSAYARATAN</H4>
+                   <p>1. FOTOCOPY IJAZAH SMP/MTS</p>
+                   <p>2. FOTOCOPY KTP Orang Tua</p>
+                   <p>3. FOTOCOPY Kartu Keluarga</p>
+                   <p>4. FOTOCOPY Akta Kelahiran</p>
+                   <p>5. Surat Kelakuan Baik dari SMP/Mts</p>
+                   <p>6. Surat Keterangan Sehat</p>
+                   <p>7. Fotocopy Kartu KIP/KKS/PKH (Bila ada)</p>
+                   <p>8. Mengisi Formulir Pendafatran</p>
+                <p>
+                    Persyaratan diatas dibawa saat pendafatran kesekolah dan mengisi Formulir dikampus SMK LPS CIAMIS
+                </p>
+            </div>
+
+            <div class="sejarah-image">
+                <img src="alur.png" alt="Alur Pendaftaran">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FORM -->
+<section id="daftar">
+    <div class="section-title">
+        <h3>Form Pendaftaran</h3>
+    </div>
+
+    <form onsubmit="return kirim()">
+        <input type="text" id="nama" placeholder="Nama Lengkap" required>
+        <input type="number" id="NISN" placeholder="Nomor Induk Siswa Nasional" required>
+        <input type="number" id="No HP" placeholder="Nomor Handphone" required>
+        <input type="text" id="alamat siswa" placeholder="Alamat Siswa" required>
+        <input type="text" id="asal" placeholder="Asal Sekolah" required>
+        
+
+        <select id="jurusan" required>
+            <option value="">Pilih Jurusan</option>
+            <option>Teknik Pemesinan</option>
+            <option>Teknik Kendaraan Ringan</option>
+            <option>Teknik Sepeda Motor</option>
+            <option>Teknik Komputer dan Jaringan</option>
+        </select>
+
+        <button type="submit">Kirim Pendaftaran</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <footer class="footer">
+        <p>SPMB 2025/2026 SMK LPS CIAMIS</p>
+    
+        <div class="social-media">
+            <a href="https://web.facebook.com/smklpciamis" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/smklpsciamis" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@smklpsciamis" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://tiktok.com/@smklpsciamis" target="_blank">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://wa.me/6282216762017" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+    
+
+</footer>
+
+<script>
+    function daftar(){
+        alert("Pendaftaran berhasil! Data Anda telah dikirim.");
+        return false;
+    }
+</script>
+
+<script>
+function kirim() {
+
+    // DATA SISWA
+    let nama   = document.getElementById("nama Lengkap").value;
+    let nisn   = document.getElementById("NISN").value;
+    let telp   = document.getElementById("No HP").value;
+    let alamat = document.getElementById("alamat Siswa").value;
+    let asal   = document.getElementById("asalSekolah").value;
+
+     // NOMOR ADMIN (GANTI DENGAN NOMOR ASLI)
+    let noAdmin = "6282216762017";
+
+    // FORMAT PESAN WHATSAPP
+    let pesan =
+`*PENDAFTARAN PPDB SMK LPS CIAMIS*
+
+
+📌 *Identitas Siswa*
+Nama : ${nama}
+NISN : ${nisn}
+No Hp : ${telp}
+Alamat Siswa : ${alamat}
+Asal Sekolah : ${asal}
+
+Saya telah mengisi formulir PPDB dan siap melanjutkan proses selanjutnya.
+`;
+
+// BUKA WHATSAPP
+    let url = "https://wa.me/" + noAdmin + "?text=" + encodeURIComponent(pesan);
+    window.open(url, "_blank");
+
+    return false; // Mencegah reload halaman
+}
+</script>
+
+
+</body>
+</html>
